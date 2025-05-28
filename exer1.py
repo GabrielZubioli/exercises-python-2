@@ -1,21 +1,24 @@
 def main():
-    intervaloComeco = int(input("Insira o numero que começara o intervalo: "))
+    intervaloComeco = int(input("Insira o número que começará o intervalo: "))
 
-    parar = False
-
-    while parar:
-        intervaloFinal = int(input("Insira o numero que terminara o intervalo:"))
+    while True:
+        intervaloFinal = int(input("Insira o número que terminará o intervalo: "))
         if (intervaloFinal - intervaloComeco) > 100:
-            parar = True
-        intervaloFinal = int(input("Intervalo invalido"))
+            break
+        else:
+            print("Intervalo inválido. A diferença deve ser maior que 100.")
 
-    somaDoIntervalo = soma(intervaloComeco,intervaloFinal)
-    print
-    
+    somaDoIntervalo = soma(intervaloComeco, intervaloFinal)
+    print(f"Intervalo informado: {intervaloComeco} a {intervaloFinal}")
+    print(f"A soma do intervalo é {somaDoIntervalo}")
+
+
 def soma(intervaloComeco, intervaloFinal):
     resultado = 0
-    for i in range (intervaloComeco, up_to, intervaloFinal) :
-        resultado = resultado + i
+    for i in range(intervaloComeco, intervaloFinal + 1):
+        resultado += i
     return resultado
 
 
+if __name__ == "__main__":
+    main()
